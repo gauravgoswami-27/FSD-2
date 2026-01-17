@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import DefaultSwitch from "./Switch";
 import ButtonBasic from "./Button";
+import Myrating from "./Rating";
 
 export default function Contact() {
   return (
@@ -8,6 +9,7 @@ export default function Contact() {
       <div>
         <ButtonBasic />
       </div>
+      <Myrating />
     </>
   );
 }
