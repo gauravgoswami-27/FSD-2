@@ -1,16 +1,43 @@
-# React + Vite
+**Experiment 2: UI Development Using Material UI Library**
+**Aim**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To develop a responsive React-based user interface using Material UI and Bootstrap, following performance optimization and accessibility best practices.
 
-Currently, two official plugins are available:
+**Description**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This experiment focuses on using modern component libraries to build reusable and responsive UI components in React. Concepts such as performance optimization (tree shaking, optimized builds) and accessibility (ARIA, keyboard navigation) are studied using LMS reference material, while the actual implementation is done in the GitHub repository.
 
-## React Compiler
+**Technologies Used**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React JS,JavaScript,HTML & CSS and Material UI (MUI)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Steps Performed**
+
+Created a React application.
+
+Installed Material UI and Bootstrap.
+
+Built reusable UI component using Material UI library.
+
+Applied responsive design and accessibility practices.
+
+Optimized and deployed the application on Netlify.
+
+**Output**
+
+A responsive and accessible React UI built using component libraries.
+
+**Learning Outcomes**
+
+Learned usage of Material UI
+
+Understood performance and accessibility best practices
+
+Gained experience in building reusable React components
+
+Enhanced skills in building reusable React components
+
+**Conclusion**
+
+This experiment helped in understanding how component libraries simplify UI development while ensuring performance, accessibility, and responsiveness in modern web applications.
