@@ -11,14 +11,14 @@ function App() {
 
   return (
     <>
-      <LocalStateCounter cno="1" />
-      <LocalStateCounter cno="2-" />
+      <LocalStateCounter cno="Component A" />
+      <LocalStateCounter cno="Component B" />
       <CounterContextProvider>
-        <CounterContextParent cno="1" />
-        <CounterContextParent cno="2" />
+        <CounterContextParent cno="Component C" />
+        <CounterContextParent cno="Component D" />
       </CounterContextProvider>
-      <CounterReduxParent cno="1" />
-      <CounterReduxParent cno="2" />
+      <CounterReduxParent cno="Component E" />
+      <CounterReduxParent cno="Component F" />
 
 
 

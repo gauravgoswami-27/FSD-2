@@ -17,8 +17,9 @@ export default function LocalStateCounter({ cno }) {
     <>
     {/* <Box  sx={{marginBottom:2, '& > button': { m: 1 } }}> */}
       <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '100px' }} >
+        <Box sx={{ bgcolor: '#cfe8fc', height: '100px',borderRadius: 2 }} >
           <h3>{cno} : Local State Count: {count}</h3>  
+          <Stack direction={"row"} justifyContent={"center"} spacing={2}>       
           
           {/* Binding event handlers to buttons  */}
           <Button variant="contained" onClick={increaseCount}>
@@ -27,6 +28,7 @@ export default function LocalStateCounter({ cno }) {
           <Button variant="outlined" onClick={decreaseCount}>
             Decrease
           </Button>
+          </Stack>
         </Box>           
 
       </Container>

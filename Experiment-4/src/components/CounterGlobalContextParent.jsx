@@ -1,21 +1,32 @@
 import { useContext } from "react";
 import { CounterContext} from "./context/CounterGlobalContextAPI";
 import Button from "@mui/material/Button";
+import {Container,Box, Stack} from "@mui/material";
 
 export default function CounterContextParent(props) {
   const { count, setCount } = useContext(CounterContext);
 
   return (
-    <div>
+    <>
+    <Container maxWidth="sm">
+    <Box sx={{ bgcolor: '#4a9d9b', height: '100px' ,borderRadius:2}}>
       <h3>{props.cno} : Gloabl State (ContextAPI) Count: {count}</h3>
 
-      <Button variant="outlined" onClick={() => setCount(count + 1)}>
+     <Stack direction={"row"} spacing={2} justifyContent={"center"}>
+       <Button variant="outlined" 
+       sx ={{color:'white', bgcolor: '#8b9239'}}
+       onClick={() => setCount(count + 1)}>
         Increase
       </Button>
 
-      <Button variant="outlined"  onClick={() => setCount(count - 1)}>
+      <Button variant="contained" 
+      sx ={{bgcolor: '#8b9239'}}
+       onClick={() => setCount(count - 1)}>
         Decrease
       </Button>
-    </div>
+     </Stack>
+    </Box>
+    </Container>
+    </>
   );
 }
