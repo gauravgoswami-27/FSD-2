@@ -1,7 +1,8 @@
-##**Aim**
+## **Aim**
 
 To implement and demonstrate Lazy Loading in a Single Page Application (SPA) using React Suspense and lazy() to optimize initial load time and performance.
-##Objectives
+
+## **Objectives**
 
     Implement code-splitting by dynamically importing components only when they are required.
 
@@ -11,7 +12,7 @@ To implement and demonstrate Lazy Loading in a Single Page Application (SPA) usi
 
     Analyze the reduction in the main bundle size by viewing network requests.
 
-##**Core Concepts**
+## **Core Concepts**
 1. Code Splitting
 
 By default, a React build bundles the entire application into one large JavaScript file. Lazy loading breaks this file into smaller "chunks." These chunks are downloaded only when the user navigates to a specific part of the app.
@@ -30,7 +31,7 @@ Because lazy-loaded components are fetched asynchronously, there is a delay wher
 
 The most common implementation of lazy loading is at the route level. Instead of loading all pages (Home, About, Dashboard) at once, the browser only fetches the code for the page the user is currently viewing.
 
-##**Learning Outcomes**
+## **Learning Outcomes**
 
     Optimization of Initial Load: Understanding how to decrease the initial "Time to Interactive" by preventing the browser from downloading unnecessary code.
 
