@@ -1,0 +1,1 @@
+import{j as a}from"./index-BlaHIujv.js";const t=()=>a.jsx(a.Fragment,{children:a.jsxs("h4",{children:["Hello , my name is Gaurav.",a.jsx("br",{}),"This is an experiment to demonstrate lazy loading in an react application."]})});export{t as default};
