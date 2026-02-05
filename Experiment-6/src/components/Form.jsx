@@ -47,7 +47,6 @@ const handleTerms = (e) => {
  }
 
 const handleSubmit = (e)=>{
-    // alert(`Username: ${uname}\n Email: ${email}`)
     e.preventDefault();
 
     const isUnameValid = uname.length >=5;

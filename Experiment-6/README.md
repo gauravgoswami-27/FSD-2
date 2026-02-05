@@ -1,16 +1,45 @@
-# React + Vite
+## **Aim**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To design and implement a responsive user registration form using React and Material UI, incorporating real-time and submission-based validation logic.
 
-Currently, two official plugins are available:
+## **Objectives**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    To implement Controlled Components using the useState hook.
 
-## React Compiler
+    To utilize MUI components (TextField, Checkbox, Stack, Box) for a professional UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    To apply Conditional Rendering for displaying error messages.
 
-## Expanding the ESLint configuration
+    To prevent default browser behavior and handle data validation during the onSubmit event.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    To validate multiple data types including strings (Username/Password), patterns (Email), and booleans (Checkbox).
+
+## **Core Concepts**
+
+Form validation is the process of ensuring that user input meets specific criteria before being processed or sent to a server. In React, this is typically handled through Internal State.
+1. Controlled vs. Uncontrolled Components
+
+In this experiment, we use Controlled Components, where React state is the "single source of truth." Every keystroke updates the state, allowing the UI to react instantly (e.g., turning a field red the moment a password is too short).
+2. Event Handling and Prevention
+
+By default, HTML forms refresh the page on submission. We use event.preventDefault() to intercept this action, allowing JavaScript to validate the data and provide feedback without losing the current application state.
+3. Short-Circuit Evaluation
+
+React allows us to use the && operator to render components dynamically. If the error state is true, the error message component is rendered; otherwise, it is ignored by the DOM.
+
+## **Features implemented**
+    *Feature	Validation Logic*	                *UI Feedback*
+    Username	Length ≥ 5 characters	        Red border + Helper text
+    Email	Valid email syntax	                Red border + Helper text
+    Password	Length ≥ 8 characters	        Red border + Helper text
+    Terms	Boolean checked === true	        Red Label + FormHelperText
+
+## **Learning Outcomes**
+
+   1. State Synchronization: How to keep UI components in sync with JavaScript logic.
+
+   2. MUI Integration: How to use the error and helperText props to enhance User Experience (UX).
+
+   3. Logical Validation: How to create custom validation functions that trigger based on specific business rules.
+
+   4. UX Best Practices: The importance of preventing invalid form submissions to ensure data integrity.
