@@ -65,3 +65,15 @@ jsonify() → Converts Python dictionary to JSON response
 
 Student data is stored in a Python list instead of a database.
 (Data resets when server restarts.)
+
+## Learning Outcomes-
+
+1. Learned how to extract and process data from URL parameters (e.g., <int:student_id>) and JSON request bodies in Flask.
+
+2. Understood how to manage application state using global variables and implement unique identifiers (current_id) within the application.
+
+3. Implemented proper error handling by returning appropriate HTTP status codes such as 201 (Created), 400 (Bad Request), and 404 (Not Found).
+
+4. Developed input validation logic to ensure required fields (like "name") are present before performing CRUD operations.
+
+5. Gained practical experience in designing and implementing RESTful API endpoints using different HTTP methods (GET, POST, PUT, DELETE) in Flask.
