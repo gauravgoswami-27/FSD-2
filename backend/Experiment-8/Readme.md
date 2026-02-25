@@ -24,11 +24,11 @@ JSON request & response handling
 
 ## Core Concepts-
 
-1️ Flask Framework
+1. Flask Framework
 
 A lightweight Python web framework used to build web applications and APIs.
 
-2️ REST Architecture
+2. REST Architecture
 
 REST (Representational State Transfer) is an architectural style that uses HTTP methods:
 
@@ -40,18 +40,18 @@ PUT → Update data
 
 DELETE → Remove data
 
-3️ Blueprint in Flask
+3. Blueprint in Flask
 
 A Blueprint is used to organize related routes into separate modules.
 In this project, all student-related routes are grouped inside student_bp.
 
-4️ JSON Handling
+4. JSON Handling
 
 request.get_json() → Reads JSON data from client
 
 jsonify() → Converts Python dictionary to JSON response
 
-5️ HTTP Status Codes
+5. HTTP Status Codes
 
 200 → Success
 
@@ -61,7 +61,7 @@ jsonify() → Converts Python dictionary to JSON response
 
 404 → Not Found
 
-6️ In-Memory Storage
+6. In-Memory Storage
 
 Student data is stored in a Python list instead of a database.
 (Data resets when server restarts.)
@@ -77,3 +77,5 @@ Student data is stored in a Python list instead of a database.
 4. Developed input validation logic to ensure required fields (like "name") are present before performing CRUD operations.
 
 5. Gained practical experience in designing and implementing RESTful API endpoints using different HTTP methods (GET, POST, PUT, DELETE) in Flask.
+
+![alt text](image.png)
