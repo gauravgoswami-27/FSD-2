@@ -77,5 +77,3 @@ Student data is stored in a Python list instead of a database.
 4. Developed input validation logic to ensure required fields (like "name") are present before performing CRUD operations.
 
 5. Gained practical experience in designing and implementing RESTful API endpoints using different HTTP methods (GET, POST, PUT, DELETE) in Flask.
-
-![alt text](image.png)
