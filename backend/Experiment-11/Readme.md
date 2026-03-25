@@ -44,17 +44,3 @@ The code demonstrates two primary HTTP methods:
     Implemented logic to filter data based on URL parameters (e.g., retrieving orders only for a specific user_id).
 
     Practiced updating in-memory data structures via API requests (PUT method with request.get_json()).
-
-
-## API Documentation
-`Customer Service (Port 5001)
-Endpoint	            Method	Description
-
-/	                    GET	    Health check for Customer Service
-/customers/<id>/orders	GET	    Returns customer info (Order integration pending)
-
-Order Service (Port 5002)
-Endpoint                Method	Description
-/	                    GET	    Health check for Order Service
-/orders/user/<user_id>	GET	    Fetches all orders belonging to a specific user
-/orders/<id>/status	    PUT	    Updates the status of an order (e.g., "Shipped")`
