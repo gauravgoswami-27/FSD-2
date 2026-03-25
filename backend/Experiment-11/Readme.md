@@ -47,14 +47,14 @@ The code demonstrates two primary HTTP methods:
 
 
 ## API Documentation
-Customer Service (Port 5001)
+`Customer Service (Port 5001)
 Endpoint	            Method	Description
 
 /	                    GET	    Health check for Customer Service
 /customers/<id>/orders	GET	    Returns customer info (Order integration pending)
 
 Order Service (Port 5002)
-Endpoint        	    Method	Description
+Endpoint                Method	Description
 /	                    GET	    Health check for Order Service
 /orders/user/<user_id>	GET	    Fetches all orders belonging to a specific user
-/orders/<id>/status	    PUT	    Updates the status of an order (e.g., "Shipped")
+/orders/<id>/status	    PUT	    Updates the status of an order (e.g., "Shipped")`
