@@ -19,7 +19,7 @@ def get_account_details(user_id):
     # Call Order Service
     try:
         response = requests.get(
-            f"http://localhost:5002/orders/user/{user_id}",
+            f"https://two3bda70053-experiment-11order.onrender.com/orders/user/{user_id}",
             timeout=3
         )
 
@@ -44,4 +44,5 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    
+    app.run(host='0.0.0.0',port=5001, debug=True)
