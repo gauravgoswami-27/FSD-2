@@ -46,13 +46,15 @@ Secure connections using credentials
 Scalability and reliability
 
 ## 4. API Endpoints
-No.	Endpoint	Method	Description	Request Body (Example)
-1	/students	POST	Create a new student	{ "uid": "U101", "name": "John", "age": 20 }
-2	/students	GET	Get all students	Not Required
-3	/students/<id>	GET	Get student by ID	Not Required
-4	/students/<id>	PUT	Update student	{ "name": "Updated Name" }
-5	/students/<id>	DELETE	Delete student	Not Required
-6	/	GET	API status check	Not Required
+
+| No. | Endpoint           | Method | Description            | Request Body (Example) |
+|-----|-------------------|--------|------------------------|------------------------|
+| 1   | `/students`       | POST   | Create a new student   | `{ "uid": "U101", "name": "John", "age": 20 }` |
+| 2   | `/students`       | GET    | Get all students       | Not Required |
+| 3   | `/students/<id>`  | GET    | Get student by ID      | Not Required |
+| 4   | `/students/<id>`  | PUT    | Update student         | `{ "name": "Updated Name" }` |
+| 5   | `/students/<id>`  | DELETE | Delete student         | Not Required |
+| 6   | `/`               | GET    | API status check       | Not Required |
 
 ## Learning Outcomes
 
