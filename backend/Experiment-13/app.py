@@ -4,7 +4,7 @@ from marshmallow import Schema, fields, validate, ValidationError
 import pymysql
 import os
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(dotenv_path=".env")
 
 pymysql.install_as_MySQLdb()
 
