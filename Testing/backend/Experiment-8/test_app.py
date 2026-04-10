@@ -21,7 +21,7 @@ def client():
 def test_create_student(client):
     response = client.post("/students", json={"name": "Student-1"})
     assert response.status_code == 201
-    assert response.json["name"] == "Student-2"
+    assert response.json["name"] == "Student-1"
 
 def test_home(client):
     response = client.get("/")
