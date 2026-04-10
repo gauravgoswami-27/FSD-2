@@ -10,7 +10,7 @@ export default function LocalStateCounter({ cno }) {
   const [count, setCount] = useState(0);
 
   // Event handler functions for click Event
-  const increaseCount = () => setCount(count + 1);
+  const increaseCount = () => setCount(count+1);
   const decreaseCount = () => setCount(count - 1);
 
   return (
