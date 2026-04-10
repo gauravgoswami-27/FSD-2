@@ -1,79 +1,53 @@
-## Aim-
-To design and implement a modular RESTful API using the Flask framework that performs full CRUD (Create, Read, Update, Delete) operations.
+## 1. Aim
 
-## Tools & frameworks-
-Language     -   Python
-Framework    -   Flask
-API Testing  -   Postman
-Deployment   -   Render
+To design, implement, and execute unit and integration tests for a RESTful Flask API using the Pytest framework to ensure endpoint reliability and code coverage.
+## 2. Tools & Technologies
 
-## Features-
-Create a student (POST)
+    Language: Python 3.10+
 
-Get all students (GET)
+    Framework: Flask (The application being tested)
 
-Get single student by ID (GET)
+    Testing Tool: pytest (Core testing framework)
 
-Update student details (PUT)
+    Coverage Tool: pytest-cov (For analyzing code execution paths)
 
-Delete a student (DELETE)
+    Virtual Environment: venv (For dependency isolation)
 
-Blueprint-based modular structure
+## 3. Theory
 
-JSON request & response handling
+Unit Testing in web development involves testing individual components or routes in isolation. In a Flask context, we use a test client—a simulated browser—that allows us to send GET, POST, PUT, and DELETE requests to our application without actually running a live server.
 
-## Core Concepts-
+Key Concepts:
 
-1. Flask Framework
+    Fixtures: Use the @pytest.fixture decorator to create reusable components. In this experiment, the client() fixture initializes the Flask app in testing mode, providing a fresh instance for every test function.
 
-A lightweight Python web framework used to build web applications and APIs.
+    Assertions: These are boolean expressions that check if the API response (status code, JSON data) matches the expected outcome.
 
-2. REST Architecture
+    Code Coverage: A metric used to measure the percentage of the source code executed during testing. High coverage reduces the likelihood of undetected bugs in edge cases.
 
-REST (Representational State Transfer) is an architectural style that uses HTTP methods:
+## 4. Test Implementation Details
+Test Function	HTTP Method	Expected Status	Purpose
+test_home	GET	200 OK	Verifies the root health-check endpoint is active.
+test_create_student	POST	201 Created	Validates resource creation and JSON payload handling.
+test_get_students	GET	200 OK	Ensures the collection endpoint returns a list.
+test_update_student	PUT	200 OK	Tests state changes by modifying an existing resource.
+test_delete_student	DELETE	200 OK	Confirms resource removal and 404 handling for missing items.
 
-GET → Retrieve data
+## 5. Execution Commands
+Bash
 
-POST → Create data
+# Run all tests with verbose output
+pytest -v
 
-PUT → Update data
+# Generate a coverage report in the terminal
+pytest --cov=app --cov-report=term-missing
 
-DELETE → Remove data
+## 6. Learning Outcomes
 
-3. Blueprint in Flask
+1.     Environment Configuration: Understood how to configure a Flask application for a testing environment using app.testing = True.
 
-A Blueprint is used to organize related routes into separate modules.
-In this project, all student-related routes are grouped inside student_bp.
+2.    REST Validation: Gained hands-on experience in validating CRUD (Create, Read, Update, Delete) operations via automated scripts.
 
-4. JSON Handling
+ 3.   State Management: Learned how to handle dependencies between tests (e.g., creating a student before attempting to delete it).
 
-request.get_json() → Reads JSON data from client
-
-jsonify() → Converts Python dictionary to JSON response
-
-5. HTTP Status Codes
-
-200 → Success
-
-201 → Created
-
-400 → Bad Request
-
-404 → Not Found
-
-6. In-Memory Storage
-
-Student data is stored in a Python list instead of a database.
-(Data resets when server restarts.)
-
-## Learning Outcomes-
-
-1. Learned how to extract and process data from URL parameters (e.g., <int:student_id>) and JSON request bodies in Flask.
-
-2. Understood how to manage application state using global variables and implement unique identifiers (current_id) within the application.
-
-3. Implemented proper error handling by returning appropriate HTTP status codes such as 201 (Created), 400 (Bad Request), and 404 (Not Found).
-
-4. Developed input validation logic to ensure required fields (like "name") are present before performing CRUD operations.
-
-5. Gained practical experience in designing and implementing RESTful API endpoints using different HTTP methods (GET, POST, PUT, DELETE) in Flask.
+ 4.   Quality Assurance: Mastered the use of coverage reports to identify "blind spots" in backend logic, ensuring a more robust and production-ready application.
