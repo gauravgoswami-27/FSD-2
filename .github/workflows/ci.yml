@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Testing/Backend
+        working-directory: Testing/backend
 
     steps:
       - name: Checkout code

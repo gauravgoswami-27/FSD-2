@@ -62,3 +62,13 @@ Scalability and reliability
 2. Understood ORM concepts using Flask-SQLAlchemy
 3. Implemented RESTful APIs with proper HTTP methods
 4. Gained hands-on experience with CRUD operations
+
+## Screenshots
+1.  `/students`       | POST   | Create a new student 
+![alt text](1.png)
+2.  `/students`       | GET    | Get all students    
+![alt text](2.png)
+3.  `/students/<id>`  | PUT    | Update student   
+![alt text](3.png) 
+4.  `/students/<id>`  | DELETE | Delete student    
+![alt text](4.png)
