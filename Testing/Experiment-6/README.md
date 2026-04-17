@@ -56,3 +56,4 @@ npx vitest run --coverage
 3.    Component Integrity: Gained the ability to catch UI regressions (bugs that break existing features) before they reach production.
 
 4.    User-Centric Testing: Mastered the practice of testing components based on user behavior rather than internal implementation details.
+
