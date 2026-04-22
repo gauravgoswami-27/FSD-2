@@ -30,4 +30,4 @@ services:
       DB_PORT : 3306
     ports:
       - "5000:5000"
-    command: sh -c "pytest && gunicorn app:app"
+    command: sh -c "pytest && gunicorn --bind 0.0.0.0:8000 app:app"
