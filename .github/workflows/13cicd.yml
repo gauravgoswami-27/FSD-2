@@ -24,7 +24,7 @@ jobs:
       - name: Run Tests via Docker Compose
         run: |
           # --exit-code-from backend ensures the job fails if pytest fails
-          docker-compose up --build --exit-code-from backend
+          docker compose up --build --exit-code-from backend
 
       - name: Login to Docker Hub
         if: success() && github.event_name == 'push'

@@ -2,6 +2,8 @@ name: Fullstack Tests
 
 on:
   push:
+    paths:
+      - 'Testing/**'
     branches: [ main ]
   pull_request:
 
