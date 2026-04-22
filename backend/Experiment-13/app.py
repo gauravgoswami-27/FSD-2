@@ -11,11 +11,11 @@ pymysql.install_as_MySQLdb()
 app = Flask(__name__)
 
 # Update MySQL credentials below
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = os.getenv("DB_HOST")
-DB_NAME = os.getenv("DB_NAME")
-DB_PORT = os.getenv("DB_PORT")
+DB_USER = os.getenv("DB_USER","root")
+DB_PASSWORD = os.getenv("DB_PASSWORD","root123")
+DB_HOST = os.getenv("DB_HOST","db")
+DB_NAME = os.getenv("DB_NAME","test_db")
+DB_PORT = os.getenv("DB_PORT","3306")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
@@ -119,4 +119,4 @@ def home():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
