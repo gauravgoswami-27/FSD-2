@@ -1,74 +1,81 @@
-## 1. Aim
+1. Aim
 
-To connect a backend application with a database and perform CRUD (Create, Read, Update, Delete) operations along with input validation.
+The aim of this experiment is to add a Continuous Deployment (CD) pipeline to the existing Testing framework (Experiment-16), create a production-ready Docker image for the backend application, and automate the deployment process using GitHub Actions.
 
-## 2. Tools & Technologies Used
-Python
-Flask
-Flask-SQLAlchemy
-MySQL (Aiven Cloud)
-PyMySQL
-Marshmallow
-python-dotenv
-Postman / Curl
+2. Theory
+Continuous Integration & Continuous Deployment (CI/CD)
 
-## 3. Theory
-# 3.1 REST API
+CI/CD is a modern approach used in software development to deliver applications faster and more reliably by automating different stages of development.
 
-A REST API enables communication between client and server using HTTP methods:
+Continuous Integration (CI):
+In CI, developers regularly merge their code changes into a shared repository. Automated tests are run to make sure that the new changes do not break the existing system.
 
-GET → Retrieve data
-POST → Create data
-PUT → Update data
-DELETE → Remove data
-# 3.2 ORM (Object Relational Mapping)
+Continuous Deployment (CD):
+CD takes things a step further. Once the code passes all tests, it is automatically built and deployed. In this case, a Docker image is created and pushed to a registry.
 
-Flask-SQLAlchemy maps Python classes to database tables, eliminating the need to write raw SQL queries.
+Why Docker is Used in CI/CD
 
-# 3.3 CRUD Operations
-Create → Insert new records
-Read → Fetch records
-Update → Modify existing records
-Delete → Remove records
-3.4 Validation using Marshmallow
+Docker is commonly used in CI/CD pipelines because it helps maintain consistency across different environments.
 
-# Marshmallow is used to:
+Platform Independence:
+Docker packages the application along with all its dependencies, so it can run on any system without worrying about the underlying OS.
+No Configuration Issues:
+Traditionally, systems needed to be set up manually (like installing Python or database drivers). With Docker, everything is already included in the image, so it avoids issues like “it works on my machine.”
+Isolation:
+Each process runs in its own container, ensuring that one process does not affect another. This also makes testing more reliable.
+3. Project Structure
+backend/Experiment-13/
+├── app.py
+├── requirements.txt
+├── tests/
+├── Dockerfile
+├── docker-compose.yml
+└── .github/workflows/
+4. Implementation Details
+Docker Configuration
 
-Ensure required fields are present
-Validate data types
-Apply constraints (e.g., age range, string length)
-3.5 Cloud Database (Aiven)
+The docker-compose.yml file is used to manage both the Flask backend and the MySQL database. In the CI setup, the depends_on feature with a health check ensures that the database starts properly before running the tests.
 
-The database is hosted on Aiven, which provides:
+GitHub Actions Workflow
 
-Remote database access
-Secure connections using credentials
-Scalability and reliability
+The workflow is triggered whenever code is pushed to the main branch. It has two main stages:
 
-## 4. API Endpoints
+Test Phase:
+Runs the command docker compose run --rm backend pytest. This creates a temporary container, runs the tests, and then stops automatically.
+Deployment Phase:
+After successful testing, a new Docker image is built and pushed to Docker Hub using GitHub Actions.
+5. How to Run
+Local Development
 
-| No. | Endpoint           | Method | Description            | Request Body (Example) |
-|-----|-------------------|--------|------------------------|------------------------|
-| 1   | `/students`       | POST   | Create a new student   | `{ "uid": "U101", "name": "John", "age": 20 }` |
-| 2   | `/students`       | GET    | Get all students       | Not Required |
-| 3   | `/students/<id>`  | GET    | Get student by ID      | Not Required |
-| 4   | `/students/<id>`  | PUT    | Update student         | `{ "name": "Updated Name" }` |
-| 5   | `/students/<id>`  | DELETE | Delete student         | Not Required |
-| 6   | `/`               | GET    | API status check       | Not Required |
+To run the application locally:
 
-## Learning Outcomes
+docker compose up --build
+Running Tests
 
-1. Learned how to connect Flask backend with MySQL database
-2. Understood ORM concepts using Flask-SQLAlchemy
-3. Implemented RESTful APIs with proper HTTP methods
-4. Gained hands-on experience with CRUD operations
+To run tests (similar to CI):
 
-## Screenshots
-1.  `/students`       | POST   | Create a new student 
-![alt text](1.png)
-2.  `/students`       | GET    | Get all students    
-![alt text](2.png)
-3.  `/students/<id>`  | PUT    | Update student   
-![alt text](3.png) 
-4.  `/students/<id>`  | DELETE | Delete student    
-![alt text](4.png)
+docker compose run --rm backend pytest
+6. Learning Outcomes
+Learned how to automate workflows using GitHub Actions
+Understood how Docker ensures the same environment in development and production
+Gained experience in running containers specifically for testing
+Learned how to manage secrets securely in CI/CD pipelines
+Understood how to make applications platform-independent
+
+7. Screenshots 
+
+GitHub Actions 
+
+![alt text](image.png)
+
+PostMan testing 
+
+![alt text](image-1.png)
+
+Docker - creating and checking running containers
+
+![alt text](image-2.png)
+
+Docker - building images
+
+![alt text](image-3.png)
