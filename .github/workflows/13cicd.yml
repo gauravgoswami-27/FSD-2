@@ -23,10 +23,13 @@ jobs:
 
       - name: Run Tests via Docker Compose
         run: |
-          # --exit-code-from backend ensures the job fails if pytest fails
-          docker compose up --build --exit-code-from backend
+          # Use 'run' to execute ONLY pytest. 
+          # This overrides the Gunicorn command so the container exits when tests finish.
+          docker compose run --rm backend pytest
 
       - name: Login to Docker Hub
+        # The 'run' command above returns a non-zero exit code if tests fail, 
+        # so success() will only be true if all tests passed.
         if: success() && github.event_name == 'push'
         uses: docker/login-action@v3
         with:
@@ -39,4 +42,7 @@ jobs:
         with:
           context: backend/Experiment-13
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-student-api:latest
+          # Note: It's good practice to tag with the commit SHA as well as latest
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/flask-student-api:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/flask-student-api:${{ github.sha }}
