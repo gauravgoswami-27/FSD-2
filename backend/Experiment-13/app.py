@@ -10,7 +10,7 @@ pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
 
-# Update MySQL credentials below
+# Update MySQL credentials below ,
 DB_USER = os.getenv("DB_USER","root")
 DB_PASSWORD = os.getenv("DB_PASSWORD","root123")
 DB_HOST = os.getenv("DB_HOST","db")
