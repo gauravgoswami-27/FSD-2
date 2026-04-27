@@ -22,7 +22,7 @@ jobs:
       
       - name: Install Backend Dependencies
         run: |
-          cd backend
+          cd EndSem-WS3/backend
           pip install -r requirements.txt
           # Add your test command here, e.g., pytest
       
@@ -34,7 +34,7 @@ jobs:
           
       - name: Install Frontend Dependencies
         run: |
-          cd frontend
+          cd EndSem-WS3/frontend
           npm install
           npm run build
 
