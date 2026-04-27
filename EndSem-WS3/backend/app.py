@@ -10,7 +10,7 @@ def create_app():
     app.register_blueprint(student_bp)
 
     # Register Middlewares
-    # register_middlewares(app)
+    # register_middlewares(app),
 
     return app
 
